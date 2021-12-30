@@ -7,8 +7,8 @@
   
   <div class="row row-cols-1 row-cols-md-2 g-4" ref="scrollComponent" >
     <div class="col" v-for="personaje in personajes" :key="personaje.id">
-    <Personaje :personaje="personaje" @click="showModal(personaje)"/>
-  </div>
+      <Personaje :personaje="personaje" @click="showModal(personaje)"/>
+    </div>
   </div>
 
   <EditarPersonaje :heroeM="heroeM" :mostrar='mostrar' @close='showModal'>
@@ -17,7 +17,7 @@
 
 <script>
 
-import { defineAsyncComponent, onMounted, onUnmounted, ref, watch } from "vue";
+import { defineAsyncComponent, onMounted, onUnmounted, ref } from "vue";
 
 import usePersonajes from "@/composables/usePersonajes";
 import EditarPersonaje from "@/components/EditarPersonaje.vue";
@@ -86,87 +86,13 @@ export default {
   },
 
 }
-</script>
-<style scoped>
 
-h1{
-  margin: 6% 0;
-}
-/* 
-.home{
-  background-color: rgba(0, 176, 234, 0.5);
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-} */
-
-</style>
-
-
-<!-- antes
-<template>
-
-  <div class="row row-cols-1 row-cols-md-2 g-4" ref="scrollComponent">
-    <div class="col" v-for="personaje in personajes" :key="personaje.id">
-    <Personaje :personaje="personaje" />
-  </div>
-  </div>
-
-   <div v-else> <span>No hay personajes</span></div> 
-</template>
-
-<script>
-import { defineAsyncComponent, onMounted, onUnmounted, ref, watch } from "vue";
-import usePersonajes from "@/composables/usePersonajes";
-
-export default {
-  components: {
-    // Navbar: defineAsyncComponent( () => import('@/components/Navbar.vue') ),
-    Personaje: defineAsyncComponent(() => import("@/components/Personaje.vue")),
-  },
-
-  // props:{
-  //   personaje: String
-  // },
-
-  setup() {
-    const scrollComponent = ref(null);
-
-    const { isLoading, getPersonajes, personajes } = usePersonajes();
-
-    const cargarPersonajes = () => {
-      let nuevosPersonajes = personajes.value;
-      personajes.value.push(...nuevosPersonajes);
-    };
-
-    onMounted(() => {
-      window.addEventListener("scroll", handleScroll);
-    });
-
-    onUnmounted(() => {
-      window.removeEventListener("scroll", handleScroll);
-    });
-
-    const handleScroll = (e) => {
-      let element = scrollComponent.value;
-
-      if (element.getBoundingClientRect().bottom < window.innerHeight) {
-        cargarPersonajes();
-      }
-    };
-
-    return {
-      isLoading,
-      getPersonajes,
-      personajes,
-      // getPicture: ({ path, extension }) => path.concat(".", extension),
-      scrollComponent,
-    };
-  },
-};
 </script>
 
 <style scoped>
+
+  h1{
+    margin: 6% 0;
+  }
+
 </style>
--->

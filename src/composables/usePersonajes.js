@@ -1,7 +1,6 @@
 import marvelApi from '@/api/marvelApi'
 import { ref } from 'vue'
 
-
 const usePersonajes = () =>{
     
     const personajes = ref([])
@@ -10,21 +9,20 @@ const usePersonajes = () =>{
 
     const getPersonajes = async () =>{ 
 
-    isLoading.value = true
+      isLoading.value = true
 
-    try {
+      try {
 
-        const { data } = await marvelApi.get('/characters')
+          const { data } = await marvelApi.get('/characters')
 
-        personajes.value = data.data.results
-        listado.value = [ ...personajes.value]
-        isLoading.value = false
+          personajes.value = data.data.results
+          listado.value = [ ...personajes.value]
+          isLoading.value = false
 
-      // return personajes
 
-    } catch (error) {
-            console.log(error);
-    }
+      } catch (error) {
+              console.log(error);
+      }
      
     }
 

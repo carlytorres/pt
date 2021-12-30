@@ -89,35 +89,3 @@ textarea {
     }
 }
 </style>
-
-
-
-<!--
-<template>
-    <div class="card">
-        <h1 class="card-title">{{ personaje.name }}</h1>
-
-        <img :src="getPicture(personaje.thumbnail)" class="card-img-top" :alt="`imagen-${personaje.name}`">
-
-        <div class="card-body">
-            <textarea :value="personaje.description" :disabled="isDisabled"></textarea>
-        </div>
-        <button @click="modificar(personaje)">{{ txtBtn }}</button>
-
-    </div>
-
-
-</template>
-props:{
-  personaje:{}
-},
-<script>
-export default {
-
-}
-</script>
-
-<style>
-
-</style>
--->
