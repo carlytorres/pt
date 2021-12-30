@@ -93,7 +93,7 @@ export default {
 <style scoped>
 
   h2{
-    margin:7% 0 2% 0;
+    margin:3% 0 2% 0;
   }
 
 </style>

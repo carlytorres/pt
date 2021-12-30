@@ -44,7 +44,7 @@ export default {
 
 <style scoped>
 nav{
-  position: fixed;
+  position: sticky;
   left:0;         
   top:0;          
   width:100vw;
