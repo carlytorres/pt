@@ -9,11 +9,11 @@
                         <div class="row-6">
                             <img :src="getPicture(heroeM.thumbnail)" class="card-img-top" :alt="`imagen-${heroeM.name}`">
 
-                            <div class="row-6">
+                            <div class="row-6 mt-3">
                                 <input class="card-title" v-model="heroeM.name" >
                             
                                 <textarea v-model="heroeM.description"></textarea>
-                                <button @click="close(heroeM)" type="button" class="btn btn-danger">Editar</button> 
+                                <button @click="close(heroeM)" type="button" class="btn btn-danger mt-3">Editar</button> 
 
                             </div>
                         </div>
